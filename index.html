@@ -8,6 +8,336 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <style>
+:root {
+    --bg-color-light: #f4f7f9;
+    --bg-color-dark: #1a1a1a;
+    --text-color-light: #333;
+    --text-color-dark: #fff;
+    --accent-color: #007bff;
+    --secondary-accent: #6c757d;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+}
+
+.full-screen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.full-screen-menu.show {
+    transform: translateX(0);
+}
+
+.full-screen-menu a {
+    font-size: 2.5rem;
+    color: var(--text-color-dark);
+    text-decoration: none;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s;
+}
+
+.full-screen-menu a:hover {
+    background-color: #444;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.section p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Home Section */
+.home {
+    background-color: orange;
+    padding-top: 100px;
+}
+
+.home .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.home h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+.home h2 {
+    font-size: 2rem;
+    color: var(--secondary-accent);
+    margin-bottom: 20px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--accent-color);
+}
+
+/* About Section */
+.about {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.about h1 {
+    color: var(--text-color-dark);
+}
+
+.about p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.about-image-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-light);
+}
+
+.about img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#skill {
+            padding: 100px 50px;
+            display:co;
+            background: white;
+            color:black;
+            text-align: center;
+        }
+
+        #skill h1 {
+            font-size: 3em;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #ddd;
+            border-radius: 50px;
+            height: 25px;
+            position: relative;
+        }
+
+        .skills {
+            height: 100%;
+            border-radius: inherit;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: width 0.6s ease;
+        }
+
+        .html { background-color: #04AA6D; }
+        .css { background-color: #2196F3; }
+        .js { background-color: #f44336; }
+        .php { background-color: #ff9800; }
+        .ve { background-color: #9C27B0; }
+
+
+/* Contact Section */
+.contact {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.contact h1 {
+    color: var(--text-color-dark);
+}
+
+.contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-color-dark);
+    color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer .social-links a {
+    color: #ccc;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    .section {
+        padding: 100px 50px;
+    }
+
+    .home h1 { font-size: 4rem; }
+    .home h2 { font-size: 2.5rem; }
+
+    .about {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .about-image-container {
+        order: 2;
+    }
+
+    .about-content {
+        order: 1;
+        flex: 1;
+        padding-right: 50px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .skill-item {
+        text-align: center;
+    }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+    .home h1 { font-size: 5rem; }
+    .home h2 { font-size: 3rem; }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+        
+    </style>
 
     <header class="header">
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
@@ -105,4 +435,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
